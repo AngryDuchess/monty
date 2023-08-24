@@ -9,6 +9,7 @@
 char fetch_tok(char *str, const char *delims)
 {
 	static char *lastToken;
+	char *token = NULL;
 
 	if (str == NULL)
 	{

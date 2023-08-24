@@ -47,9 +47,6 @@ void m_pop(stack_t **stack, unsigned int line_number);
 void m_add(stack_t **stack, unsigned int line_number);
 void m_sub(stack_t **stack, unsigned int line_number);
 void m_mul(stack_t **stack, unsigned int line_number);
-<<<<<<< HEAD
-=======
 void m_pint(stack_t **stack, unsigned int line_number);
->>>>>>> b647ef2a0e9bf6eab4b38726d47991fbdb707aa1
 
 #endif

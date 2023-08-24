@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 	FILE *file_pointer;
 	ssize_t bytes_Read;
 	size_t len = 0;
-	chat *token = NULL;
+	char *token = NULL;
 	char *line =  NULL;
 	stack_t *head = NULL;
 	unsigned int line_number = 0;

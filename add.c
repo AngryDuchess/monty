@@ -1,4 +1,4 @@
-#include "monty"
+#include "monty.h"
 
 /**
  * m_add - adds the top two elements of the stack
@@ -7,7 +7,7 @@
  * Return : nothing
  */
 
-void m_add(stck_t **head, unsigned int line_number)
+void m_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h;
 

@@ -2,22 +2,21 @@
 
 /**
  * m_pall - Prints values in stack_t linked list
- * @head: Stack head
- * @h: current node
+ * @stack: pointer to Stack head
  * @line_number: Line number
  * Return: nothing
  */
 
-void m_pall(stack_t **head, unsigned int line_number)
+void m_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h;
 	(void) line_number;
 
-	h = *head;
+	h = *stack;
 
 	while (h != NULL)
 	{
 		printf("%d\n", h->n);
-		h = h->next
+		h = h->next;
 	}
 }

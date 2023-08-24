@@ -4,6 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+extern int global_var;
+int global_var;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,5 +47,9 @@ void m_pop(stack_t **stack, unsigned int line_number);
 void m_add(stack_t **stack, unsigned int line_number);
 void m_sub(stack_t **stack, unsigned int line_number);
 void m_mul(stack_t **stack, unsigned int line_number);
+<<<<<<< HEAD
+=======
+void m_pint(stack_t **stack, unsigned int line_number);
+>>>>>>> b647ef2a0e9bf6eab4b38726d47991fbdb707aa1
 
 #endif

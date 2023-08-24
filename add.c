@@ -18,7 +18,7 @@ void m_add(stack_t **stack, unsigned int line_number)
 	}
 
 	h = *stack;
-	h->next->n = h->n;
-	*stack += h->next;
+	h->next->n += h->n;
+	*stack = h->next;
 	free(h);
 }

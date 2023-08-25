@@ -12,7 +12,7 @@ void m_pstr(stack_t **stack, unsigned int line_number)
 	stack_t *h;
 	(void)line_number;
 
-	h = *head;
+	h = *stack;
 
 	while (h)
 	{

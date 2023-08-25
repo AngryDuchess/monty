@@ -16,7 +16,7 @@ void fetch_command(char *token, stack_t **top, unsigned int line_number)
 		{"sub", m_sub},
 		{"add", m_add},
 		{"mul", m_mul},
-		{"swap",m_swap},
+		{"swap", m_swap},
 		{NULL, NULL}
 	};
 	int i = 0;

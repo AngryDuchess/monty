@@ -9,6 +9,7 @@
 void fetch_command(char *token, stack_t **top, unsigned int line_number)
 {
 	instruction_t cmd[] = {
+		{"push", m_push},
 		{"pall", m_pall},
 		{"pint", m_pint},
 		{"pop", m_pop},

@@ -6,24 +6,17 @@
  * @delims: delimiters
  * Return: token
  */
-char fetch_tok(char *str, const char *delims)
+char *fetch_tok(char *str, const char *delims)
 {
 	static char *lastToken;
-	char *token = NULL;
+	char *tokenEnd;
 
 	if (str == NULL)
 	{
 		str = lastToken;
 	}
-	str += strspn(str, delims);
 
-	if (*str == '\0')
-	{
-		lastToken = NULL;
-		return (NULL);
-	}
-
-	char *tokenEnd = str + strcspn(str, delims);
+	tokenEnd = str + strcspn(str, delims);
 
 	if (*tokenEnd != '\0')
 	{
@@ -35,5 +28,5 @@ char fetch_tok(char *str, const char *delims)
 		lastToken = NULL;
 	}
 
-	return (str);
+	return (str + strspn(str, delims));
 }

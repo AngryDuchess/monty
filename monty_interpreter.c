@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 			fetch_command(token, &head, line_number);
 	}
 	free(line);
-	free_stack(head);
+	free_stack(&head);
 	fclose(file_pointer);
 	return (0);
 }

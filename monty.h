@@ -1,12 +1,14 @@
 #ifndef MONTY
 #define MONTY
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <string.h>
 #include <fcntl.h>
+#include <ctype.h>
 #include <sys/stat.h>
 
 extern int global_var;
@@ -48,5 +50,10 @@ void m_add(stack_t **stack, unsigned int line_number);
 void m_sub(stack_t **stack, unsigned int line_number);
 void m_mul(stack_t **stack, unsigned int line_number);
 void m_pint(stack_t **stack, unsigned int line_number);
+void m_swap(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t **stack);
+
+void fetch_command(char *token, stack_t **top, unsigned int line_number);
+char *fetch_tok(char *str, const char *delims);
 
 #endif

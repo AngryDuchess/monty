@@ -7,36 +7,25 @@
  */
 void m_push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
-	(void) line_number;
+	stack_t *new;
 
-	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
+	(void) line_number;
+	new = malloc(sizeof(stack_t));
+	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
-	if (!global_var)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		free(new_node);
-		free_stack(stack);
-		exit(EXIT_FAILURE);
-	}
-
-	new_node->n = global_var;
-	new_node->prev = NULL;
-
+	new->n = global_var;
+	new->prev = NULL;
 	if (*stack == NULL)
 	{
-		new_node->next = NULL;
-		*stack = new_node;
+		new->next = NULL;
+		*stack = new;
 	}
 	else
 	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
-		*stack = new_node;
+		new->next = *stack;
+		*stack = new;
 	}
 }

@@ -16,13 +16,14 @@ void m_rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	{
 		return;
 	}
-	(*stack)->next->prev = NULL;
 
 	while (h->next)
 	{
 		h = h->next;
 	}
 	h->next = *stack;
-	(*stack)->next = NULL;
 	(*stack)->prev = h;
-	(*stack) = *stack
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->next = NULL;
+}

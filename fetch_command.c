@@ -17,6 +17,12 @@ void fetch_command(char *token, stack_t **top, unsigned int line_number)
 		{"add", m_add},
 		{"mul", m_mul},
 		{"swap", m_swap},
+		{"pchar", m_pchar},
+		{"mod", m_mod},
+		{"pstr", m_pstr},
+		{"rotl", m_rotl},
+		{"nop", m_nop},
+		{"div", m_div},
 		{NULL, NULL}
 	};
 	int i = 0;

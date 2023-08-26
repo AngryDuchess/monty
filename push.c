@@ -17,6 +17,14 @@ void m_push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
+	if (!global_var)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free(new_node);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
+	}
+
 	new_node->n = global_var;
 	new_node->prev = NULL;
 

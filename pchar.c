@@ -11,7 +11,7 @@ void m_pchar(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h;
 
-	h = *head;
+	h = *stack;
 	if (!h)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);

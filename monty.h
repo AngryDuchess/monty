@@ -52,6 +52,11 @@ void m_sub(stack_t **stack, unsigned int line_number);
 void m_mul(stack_t **stack, unsigned int line_number);
 void m_pint(stack_t **stack, unsigned int line_number);
 void m_swap(stack_t **stack, unsigned int line_number);
+void m_pstr(stack_t **stack, unsigned int line_number);
+void m_pchar(stack_t **stack, unsigned int line_number);
+void m_rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number);
+void m_div(stack_t **stack, unsigned int line_number);
+void m_mod(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
 
 void fetch_command(char *token, stack_t **top, unsigned int line_number);

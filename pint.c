@@ -8,7 +8,6 @@
  */
 void m_pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
 
 	if (!stack || !(*stack))
 	{
@@ -16,6 +15,6 @@ void m_pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%d\n", tmp->n);
+	printf("%d\n", (*stack)->n);
 }
 

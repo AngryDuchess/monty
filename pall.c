@@ -13,7 +13,6 @@ void m_pall(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 
 	h = *stack;
-
 	while (h != NULL)
 	{
 		printf("%d\n", h->n);

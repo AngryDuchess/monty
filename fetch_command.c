@@ -31,11 +31,20 @@ void fetch_command(char *token, stack_t **top, unsigned int line_number)
 	{
 		if (strcmp(token, cmd[i].opcode) == 0)
 		{
+			if (strcmp(token, "push") == 0) {
+				token = fetch_tok(NULL, " \t\n");
+				if (token == NULL) {
+					fprintf(stderr, "L%d: usage: push integer\n", line_number);
+					exit(EXIT_FAILURE);
+				}
+				strncpy(globv.arg, token, ARG_SIZE);
+			}
+
 			cmd[i].f(top, line_number);
 			return;
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+	fprintf(stderr, "L%d: unkown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }

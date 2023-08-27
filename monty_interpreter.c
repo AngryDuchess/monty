@@ -7,13 +7,15 @@
  * @argv: argument vector
  * Return: EXIT_SUCCESS on success EXIT_FAILURE on error
  */
+global_var_t globv;
+
 int main(int argc, char **argv)
 {
 	FILE *file_pointer;
 	ssize_t r_bytes;
 	size_t len = 0;
 	char *token = NULL;
-	char *line =  NULL;
+	char *line;
 	stack_t *head = NULL;
 	unsigned int line_number = 0;
 
@@ -35,8 +37,17 @@ int main(int argc, char **argv)
 		line_number++;
 		token = fetch_tok(line, " \t\n");
 		if (token != NULL)
+		{
+			if (strcmp(token, "push") == 0)
+			{
+				int extracted_value = atoi(line);
+				sprintf(globv.arg, "%d", extracted_value);
+			}
 			fetch_command(token, &head, line_number);
+		}
+
 	}
+
 	free(line);
 	free_stack(&head);
 	fclose(file_pointer);

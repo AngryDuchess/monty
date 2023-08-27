@@ -1,6 +1,8 @@
 #ifndef MONTY
 #define MONTY
 
+#define ARG_SIZE 100
+
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +15,18 @@
 
 extern int global_var;
 int global_var;
+/**
+ * struct bus_s - bolds floag for queue and stack and values
+ * @lifi: flag for stack and queue
+ * @arg: input values
+ */
+typedef struct global_var_s
+{
+	int lifi;
+	char arg[ARG_SIZE];
+} global_var_t;
 
+extern global_var_t globv;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

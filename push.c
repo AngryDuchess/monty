@@ -8,24 +8,35 @@
 void m_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-
+	int n;
 	(void) line_number;
+
+	if (!globv.arg)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	n = atoi(globv.arg);
+	if (!globv.arg[0] && globv.arg[0] != '-')
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	new->n = global_var;
+	new->n = n;
 	new->prev = NULL;
-	if (*stack == NULL)
+	new->next = *stack;
+
+	if (*stack)
 	{
-		new->next = NULL;
-		*stack = new;
+		(*stack)->prev= new;
 	}
-	else
-	{
-		new->next = *stack;
 		*stack = new;
-	}
 }
